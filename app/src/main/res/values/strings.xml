@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">Android-Practice</string>
+
+    <string-array name="modules">
+        <item>app</item>
+        <item>library-web</item>
+    </string-array>
+
+</resources>

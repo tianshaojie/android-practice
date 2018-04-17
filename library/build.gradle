@@ -1,0 +1,94 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion project.COMPILE_SDK_VERSION as int
+    buildToolsVersion project.BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion project.MIN_SDK_VERSION as int
+        targetSdkVersion project.TARGET_SDK_VERSION as int
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["moduleName": project.name]
+            }
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    /* ------------- Android ------------ */
+    compile "com.android.support:support-v4:${SUPPORT_VERSION}"
+    compile "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
+    compile "com.android.support:recyclerview-v7:${SUPPORT_VERSION}"
+    compile "com.android.support:design:${SUPPORT_VERSION}"
+    compile "com.android.support:cardview-v7:${SUPPORT_VERSION}"
+    compile "com.android.support:support-vector-drawable:${SUPPORT_VERSION}"
+    compile "com.android.support:support-annotations:${SUPPORT_VERSION}"
+    /* ------------- Third Library ------------ */
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    // compile 'com.tencent.bugly:crashreport:latest.release'
+    compile 'com.tencent.bugly:crashreport_upgrade:1.3.4'
+    compile 'com.tencent.bugly:nativecrashreport:3.3.1'
+    compile 'com.squareup.okhttp3:okhttp:3.9.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    compile 'com.squareup.okhttp3:okhttp-urlconnection:3.5.0'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.8'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.trello.rxlifecycle2:rxlifecycle:2.2.1'
+    compile 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.0'
+    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.0'
+    compile 'com.orhanobut:logger:2.1.1'
+    compile 'com.alibaba:fastjson:1.2.39'
+    compile 'com.github.bumptech.glide:glide:4.6.1'
+    compile "com.github.bumptech.glide:okhttp3-integration:4.6.1"
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
+    // https://github.com/wasabeef/glide-transformations
+    compile 'jp.wasabeef:glide-transformations:3.1.1'
+    // If you want to use the GPU Filters
+    compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+    compile 'de.greenrobot:eventbus:2.4.0'
+    // 沉浸式状态栏：https://github.com/gyf-dev/ImmersionBar
+    compile 'com.gyf.barlibrary:barlibrary:2.3.0'
+    // 侧滑返回：https://github.com/ikew0ng/SwipeBackLayout
+    compile 'me.imid.swipebacklayout.lib:library:1.1.0'
+    // ViewPager指示器：https://github.com/hackware1993/MagicIndicator
+    compile 'com.github.hackware1993:MagicIndicator:1.5.0'
+    // 组件化路由框架：https://github.com/chenenyu/Router
+    compile 'com.chenenyu.router:router:1.3.3'
+    annotationProcessor 'com.chenenyu.router:compiler:1.3.3'
+    // RecyclerAdapter框架：https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.38'
+    // 高斯模糊：https://github.com/wasabeef/Blurry
+    compile 'jp.wasabeef:blurry:2.1.1'
+//    compile 'com.eightbitlab:supportrenderscriptblur:1.0.1'
+//    compile 'com.eightbitlab:blurview:1.3.4'
+    // https://github.com/tbruyelle/RxPermissions
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+}
