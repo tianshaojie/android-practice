@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.fine.library.web" >
+    package="com.yuzhi.fine.library.web" >
 
-    <uses-permission android:name="com.android.fine.aidl.permission.SERVICE_PERMISSION"/>
+    <uses-permission android:name="com.yuzhi.fine.aidl.permission.SERVICE_PERMISSION"/>
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

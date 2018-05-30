@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">Android-Practice</string>
+    <string name="app_name">Practice</string>
 
     <string-array name="modules">
         <item>app</item>

@@ -41,7 +41,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    implementation 'com.gyf.barlibrary:barlibrary:2.3.0'
+    // 沉浸式状态栏：https://github.com/gyf-dev/ImmersionBar
+    compile 'com.gyf.barlibrary:barlibrary:2.3.0'
+    // 侧滑返回：https://github.com/ikew0ng/SwipeBackLayout
+    compile 'me.imid.swipebacklayout.lib:library:1.1.0'
+
     compile 'com.chenenyu.router:router:1.3.3'
     annotationProcessor 'com.chenenyu.router:compiler:1.3.3'
 }
