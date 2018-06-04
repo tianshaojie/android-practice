@@ -33,7 +33,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 public class RetrofitFactory {
 
-    private static final String BASE_URL = "http://47.95.216.226:8080/";
+    private static final String BASE_URL = "http://127.0.0.1:8080/";
 
     private static final long DEFAULT_READ_TIMEOUT = 15;
     private static final long DEFAULT_WRITE_TIMEOUT = 20;
@@ -43,11 +43,11 @@ public class RetrofitFactory {
     private static HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(null, null, null);
     private static OkHttpClient httpClient = new OkHttpClient.Builder()
             .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
-            .addNetworkInterceptor(new StethoInterceptor()) // Facebook强大的监测工具：Stetho
-            .addInterceptor(new HttpHeaderInterceptor())    // 添加通用的Header
+            .addNetworkInterceptor(new StethoInterceptor())
+            .addInterceptor(new HttpHeaderInterceptor())
             .addInterceptor(new CommonParamsInterceptor())
             .addInterceptor(new HttpCacheInterceptor())
-            .dns(new OkHttpDns(Utils.getApp()))
+            .dns(OkHttpDns.getInstance(Utils.getApp()))
             .hostnameVerifier(new HttpsUtils.UnSafeHostnameVerifier())
             .sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
             .readTimeout(DEFAULT_READ_TIMEOUT, TimeUnit.SECONDS)
