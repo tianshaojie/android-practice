@@ -97,4 +97,5 @@ dependencies {
     compile ('com.aliyun.ams:alicloud-android-httpdns:1.1.7@aar') {
         transitive true
     }
+    api 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
 }

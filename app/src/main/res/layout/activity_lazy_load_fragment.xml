@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.LazyLoadFragmentActivity"
+    android:orientation="vertical">
+
+
+    <com.yuzhi.fine.widgets.PagerSlidingTabStrip
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:background="@color/colorPrimary"
+        app:pstsTabPaddingLeftRight="0dp"
+        app:pstsDividerColor="@color/_465159"
+        app:pstsDividerPadding="10dp"
+        app:pstsDividerWidth="0.5dp"
+        app:pstsIndicatorColor="@color/colorAccent"
+        app:pstsIndicatorHeight="2dp"
+        app:pstsIndicatorInFollower="true"
+        app:pstsShouldExpand="true"
+        app:pstsUnderlineColor="@color/_545E6B"
+        app:pstsUnderlineHeight="0.5dp"
+        app:selectedTabTextColor="@color/colorAccent"
+        app:tabTextColor="#b3bcc1"
+        app:tabTextSize="@dimen/text_size_15" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never" />
+
+</LinearLayout>
