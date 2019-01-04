@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yuzhi.fine">
 
-    <permission android:name="com.yuzhi.fine.aidl.permission.SERVICE_PERMISSION" android:protectionLevel="normal"/>
+    <permission
+        android:name="com.yuzhi.fine.aidl.permission.SERVICE_PERMISSION"
+        android:protectionLevel="normal" />
 
     <application
         android:name="com.yuzhi.fine.App"
@@ -20,12 +22,16 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="com.yuzhi.fine.activity.LazyLoadFragmentActivity"
+            android:screenOrientation="portrait" />
+
         <service
-            android:exported="true"
             android:name="com.yuzhi.fine.service.WebViewAidlService"
+            android:exported="true"
             android:permission="com.yuzhi.fine.aidl.permission.SERVICE_PERMISSION">
             <intent-filter>
-                <action android:name="com.yuzhi.fine.library.web.IWebAidlInterface"/>
+                <action android:name="com.yuzhi.fine.library.web.IWebAidlInterface" />
             </intent-filter>
         </service>
 

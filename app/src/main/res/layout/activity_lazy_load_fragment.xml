@@ -8,20 +8,22 @@
     android:orientation="vertical">
 
 
+    <include layout="@layout/toolbar" />
+
     <com.yuzhi.fine.widgets.PagerSlidingTabStrip
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="34dp"
         android:background="@color/colorPrimary"
         app:pstsTabPaddingLeftRight="0dp"
-        app:pstsDividerColor="@color/_465159"
+        app:pstsDividerColor="#465159"
         app:pstsDividerPadding="10dp"
         app:pstsDividerWidth="0.5dp"
         app:pstsIndicatorColor="@color/colorAccent"
         app:pstsIndicatorHeight="2dp"
         app:pstsIndicatorInFollower="true"
         app:pstsShouldExpand="true"
-        app:pstsUnderlineColor="@color/_545E6B"
+        app:pstsUnderlineColor="#545E6B"
         app:pstsUnderlineHeight="0.5dp"
         app:selectedTabTextColor="@color/colorAccent"
         app:tabTextColor="#b3bcc1"

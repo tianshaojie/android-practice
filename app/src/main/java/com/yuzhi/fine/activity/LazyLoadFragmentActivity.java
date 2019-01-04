@@ -8,9 +8,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.yuzhi.fine.R;
+import com.yuzhi.fine.library.base.activity.BaseSwipeBackActivity;
 import com.yuzhi.fine.widgets.PagerSlidingTabStrip;
 
-public class LazyLoadFragmentActivity extends AppCompatActivity {
+public class LazyLoadFragmentActivity extends BaseSwipeBackActivity {
 
     private PagerSlidingTabStrip tabs;
     private ViewPager pager;
@@ -25,10 +26,25 @@ public class LazyLoadFragmentActivity extends AppCompatActivity {
         pager = findViewById(R.id.pager);
         adapter = new MyStockPagerAdapter(getSupportFragmentManager());
 
-        pager.setOffscreenPageLimit(3);
         pager.setAdapter(adapter);
         tabs.setViewPager(pager);
 
+        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     public class MyStockPagerAdapter extends FragmentPagerAdapter {
@@ -51,7 +67,7 @@ public class LazyLoadFragmentActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return MyStockFragment.newInstance();
+            return MyStockFragment.newInstance(TITLES[position]);
         }
 
     }

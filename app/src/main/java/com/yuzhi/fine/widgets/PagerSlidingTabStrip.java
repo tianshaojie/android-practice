@@ -473,6 +473,14 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         return dividerColor;
     }
 
+    public int getDividerWidth() {
+        return dividerWidth;
+    }
+
+    public void setDividerWidth(int dividerWidth) {
+        this.dividerWidth = dividerWidth;
+    }
+
     public void setUnderlineHeight(int underlineHeightPx) {
         this.underlineHeight = underlineHeightPx;
         invalidate();
