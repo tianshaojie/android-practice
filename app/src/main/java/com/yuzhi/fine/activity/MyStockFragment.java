@@ -18,7 +18,7 @@ import com.yuzhi.fine.library.base.fragment.BaseFragment;
  */
 public class MyStockFragment extends BaseFragment implements ILazyLoadFragment {
 
-    public static Fragment newInstance(String title) {
+    public static MyStockFragment newInstance(String title) {
         MyStockFragment messageFragment = new MyStockFragment();
         Bundle bundle = new Bundle();
         bundle.putString("title", title);
@@ -28,6 +28,7 @@ public class MyStockFragment extends BaseFragment implements ILazyLoadFragment {
 
     boolean isCreate = false;
     String title;
+    TextView textView;
 
     @Nullable
     @Override
@@ -38,6 +39,7 @@ public class MyStockFragment extends BaseFragment implements ILazyLoadFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        initData();
         initView(view);
         isCreate = true;
     }
@@ -50,18 +52,20 @@ public class MyStockFragment extends BaseFragment implements ILazyLoadFragment {
 
     @Override
     public void initView(View rootView) {
-        TextView textView = rootView.findViewById(R.id.textView);
-        textView.setText(title);
+        textView = rootView.findViewById(R.id.textView);
     }
 
     @Override
     public void onShow() {
-        Logger.i("");
+        Logger.i("onShow - %s", title);
+        textView.postDelayed(() -> textView.setText(title), 500);
+
     }
 
     @Override
     public void onHide() {
-
+        Logger.i("onHide - %s", title);
+        textView.postDelayed(() -> textView.setText("text"), 500);
     }
 }
 

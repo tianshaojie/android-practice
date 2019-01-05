@@ -24,7 +24,8 @@
 
         <activity
             android:name="com.yuzhi.fine.activity.LazyLoadFragmentActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:label="Fragment 懒加载"/>
 
         <service
             android:name="com.yuzhi.fine.service.WebViewAidlService"
