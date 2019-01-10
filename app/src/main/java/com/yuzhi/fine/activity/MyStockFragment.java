@@ -29,6 +29,7 @@ public class MyStockFragment extends BaseFragment implements ILazyLoadFragment {
     boolean isCreate = false;
     String title;
     TextView textView;
+    private boolean isVisible = false;
 
     @Nullable
     @Override
@@ -44,7 +45,6 @@ public class MyStockFragment extends BaseFragment implements ILazyLoadFragment {
         isCreate = true;
     }
 
-
     @Override
     public void initData() {
         title = getArguments().getString("title");
@@ -56,16 +56,34 @@ public class MyStockFragment extends BaseFragment implements ILazyLoadFragment {
     }
 
     @Override
-    public void onShow() {
-        Logger.i("onShow - %s", title);
+    public void show() {
+        isVisible = true;
+        Logger.i("show - %s", title);
         textView.postDelayed(() -> textView.setText(title), 500);
 
     }
 
     @Override
-    public void onHide() {
-        Logger.i("onHide - %s", title);
+    public void hide() {
+        isVisible = false;
+        Logger.i("hide - %s", title);
         textView.postDelayed(() -> textView.setText("text"), 500);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(isVisible) {
+            Logger.i("onResume - %s", title);
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if(isVisible) {
+            Logger.i("onStop - %s", title);
+        }
     }
 }
 

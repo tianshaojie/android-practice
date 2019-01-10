@@ -13,8 +13,8 @@ public interface ILazyLoadFragment {
 
     void initView(View rootView);
 
-    void onShow();
+    void show();
 
-    void onHide();
+    void hide();
 
 }

@@ -1,13 +1,9 @@
 package com.yuzhi.fine.activity;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.view.ViewGroup;
 
 import com.orhanobut.logger.Logger;
 import com.yuzhi.fine.R;
@@ -49,9 +45,9 @@ public class LazyLoadFragmentActivity extends BaseSwipeBackActivity {
                 Logger.i("position = %s", position);
                 MyStockFragment myStockFragment = adapter.getItem(prevFragment);
                 if(myStockFragment != null) {
-                    myStockFragment.onHide();
+                    myStockFragment.hide();
                 }
-                adapter.getItem(position).onShow();
+                adapter.getItem(position).show();
 
                 prevFragment = currFragment;
                 currFragment = position;
@@ -63,7 +59,7 @@ public class LazyLoadFragmentActivity extends BaseSwipeBackActivity {
             }
         });
         pager.setOffscreenPageLimit(3);
-        pager.post(() -> adapter.getItem(0).onShow());
+        pager.post(() -> adapter.getItem(0).show());
     }
 
     public class MyStockPagerAdapter extends FragmentPagerAdapter {
