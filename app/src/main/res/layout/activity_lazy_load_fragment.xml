@@ -4,13 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".activity.LazyLoadFragmentActivity"
     android:orientation="vertical">
 
 
     <include layout="@layout/toolbar" />
 
-    <com.yuzhi.fine.widgets.PagerSlidingTabStrip
+    <cn.skyui.practice.widgets.PagerSlidingTabStrip
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="34dp"

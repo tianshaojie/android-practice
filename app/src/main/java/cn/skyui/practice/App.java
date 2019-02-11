@@ -1,10 +1,13 @@
-package com.yuzhi.fine;
+package cn.skyui.practice;
 
 import android.app.Application;
 import android.text.TextUtils;
 
 import com.orhanobut.logger.Logger;
-import com.yuzhi.fine.library.common.manager.LibraryInitManager;
+
+import cn.skyui.BuildConfig;
+import cn.skyui.R;
+import cn.skyui.library.LibraryInitManager;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

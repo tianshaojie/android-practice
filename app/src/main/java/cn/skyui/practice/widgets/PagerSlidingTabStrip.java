@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package com.yuzhi.fine.widgets;
+package cn.skyui.practice.widgets;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -37,7 +37,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.yuzhi.fine.R;
+import cn.skyui.R;
 
 import java.util.Locale;
 

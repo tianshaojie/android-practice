@@ -1,4 +1,4 @@
-package com.yuzhi.fine.activity;
+package cn.skyui.practice.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -6,9 +6,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.orhanobut.logger.Logger;
-import com.yuzhi.fine.R;
-import com.yuzhi.fine.library.base.activity.BaseSwipeBackActivity;
-import com.yuzhi.fine.widgets.PagerSlidingTabStrip;
+import cn.skyui.R;
+import cn.skyui.library.base.activity.BaseSwipeBackActivity;
+import cn.skyui.practice.widgets.PagerSlidingTabStrip;
 
 import java.util.ArrayList;
 import java.util.List;

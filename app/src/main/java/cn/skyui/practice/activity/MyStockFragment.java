@@ -1,16 +1,15 @@
-package com.yuzhi.fine.activity;
+package cn.skyui.practice.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.orhanobut.logger.Logger;
-import com.yuzhi.fine.R;
-import com.yuzhi.fine.library.base.fragment.BaseFragment;
+import cn.skyui.R;
+import cn.skyui.library.base.fragment.BaseFragment;
 
 /**
  * @author tianshaojie

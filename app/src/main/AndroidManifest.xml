@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yuzhi.fine">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cn.skyui">
 
-    <permission
-        android:name="com.yuzhi.fine.aidl.permission.SERVICE_PERMISSION"
-        android:protectionLevel="normal" />
+    <uses-permission android:name="cn.skyui.aidl.permission.SERVICE_PERMISSION" />
 
     <application
-        android:name="com.yuzhi.fine.App"
+        android:name="cn.skyui.practice.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        tools:replace="android:theme"
         android:theme="@style/AppTheme">
-        <activity android:name="com.yuzhi.fine.activity.MainActivity">
+        <activity android:name="cn.skyui.practice.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,16 +23,16 @@
         </activity>
 
         <activity
-            android:name="com.yuzhi.fine.activity.LazyLoadFragmentActivity"
+            android:name="cn.skyui.practice.activity.LazyLoadFragmentActivity"
             android:screenOrientation="portrait"
             android:label="Fragment 懒加载"/>
 
         <service
-            android:name="com.yuzhi.fine.service.WebViewAidlService"
+            android:name="cn.skyui.library.web.service.WebViewPreLoadService"
             android:exported="true"
-            android:permission="com.yuzhi.fine.aidl.permission.SERVICE_PERMISSION">
+            android:permission="cn.skyui.aidl.permission.SERVICE_PERMISSION">
             <intent-filter>
-                <action android:name="com.yuzhi.fine.library.web.IWebAidlInterface" />
+                <action android:name="cn.skyui.library.web.IWebAidlInterface" />
             </intent-filter>
         </service>
 

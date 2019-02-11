@@ -1,4 +1,4 @@
-package com.yuzhi.fine;
+package cn.skyui;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.yuzhi.fine", appContext.getPackageName());
+        assertEquals("cn.skyui", appContext.getPackageName());
     }
 }

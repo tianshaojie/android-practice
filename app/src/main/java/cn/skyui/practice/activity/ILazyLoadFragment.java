@@ -1,4 +1,4 @@
-package com.yuzhi.fine.activity;
+package cn.skyui.practice.activity;
 
 import android.view.View;
 

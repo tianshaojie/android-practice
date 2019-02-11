@@ -1,16 +1,16 @@
-package com.yuzhi.fine.data;
+package cn.skyui.practice.data;
 
 import android.app.Activity;
 import android.content.Context;
 
 import com.chenenyu.router.Router;
 import com.orhanobut.logger.Logger;
-import com.yuzhi.fine.library.http.exception.ApiException;
-import com.yuzhi.fine.library.utils.ActivityUtils;
-import com.yuzhi.fine.library.utils.StringUtils;
-import com.yuzhi.fine.library.utils.ToastUtils;
-import com.yuzhi.fine.library.utils.Utils;
-import com.yuzhi.fine.library.widget.progress.ProgressDialog;
+import cn.skyui.library.http.exception.ApiException;
+import cn.skyui.library.utils.ActivityUtils;
+import cn.skyui.library.utils.StringUtils;
+import cn.skyui.library.utils.ToastUtils;
+import cn.skyui.library.utils.Utils;
+import cn.skyui.library.widget.progress.ProgressDialog;
 
 import java.lang.ref.WeakReference;
 

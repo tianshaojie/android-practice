@@ -2,10 +2,9 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion project.COMPILE_SDK_VERSION as int
-    buildToolsVersion project.BUILD_TOOLS_VERSION
 
     defaultConfig {
-        applicationId "com.yuzhi.fine"
+        applicationId "cn.skyui.practice"
         minSdkVersion project.MIN_SDK_VERSION as int
         targetSdkVersion project.TARGET_SDK_VERSION as int
 
@@ -40,8 +39,8 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation project(':library')
-    implementation project(':library-web')
+    implementation project(':library:library')
+    implementation project(':library-web:library')
 
     annotationProcessor 'com.chenenyu.router:compiler:1.3.3'
 }

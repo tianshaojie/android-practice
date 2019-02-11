@@ -1,18 +1,16 @@
-package com.yuzhi.fine.activity;
+package cn.skyui.practice.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.TimeUtils;
 
 import com.chenenyu.router.Router;
-import com.jakewharton.rxbinding2.view.RxView;
 import com.orhanobut.logger.Logger;
-import com.yuzhi.fine.R;
-import com.yuzhi.fine.data.ApiService;
-import com.yuzhi.fine.data.FounderHttpObserver;
-import com.yuzhi.fine.library.base.activity.BaseActivity;
-import com.yuzhi.fine.library.http.RetrofitFactory;
-import com.yuzhi.fine.library.utils.ToastUtils;
+import cn.skyui.R;
+import cn.skyui.practice.data.ApiService;
+import cn.skyui.practice.data.FounderHttpObserver;
+import cn.skyui.library.base.activity.BaseActivity;
+import cn.skyui.library.http.RetrofitFactory;
+import cn.skyui.library.utils.ToastUtils;
 
 import java.util.concurrent.TimeUnit;
 

@@ -1,4 +1,4 @@
-package com.yuzhi.fine;
+package cn.skyui;
 
 import org.junit.Test;
 

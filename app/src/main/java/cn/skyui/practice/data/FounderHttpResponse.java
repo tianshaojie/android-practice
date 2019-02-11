@@ -1,4 +1,4 @@
-package com.yuzhi.fine.data;
+package cn.skyui.practice.data;
 
 import java.io.Serializable;
 
