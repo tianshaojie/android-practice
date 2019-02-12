@@ -22,6 +22,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        BaseActivity.APP_STATUS = BaseActivity.APP_STATUS_NORMAL;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
