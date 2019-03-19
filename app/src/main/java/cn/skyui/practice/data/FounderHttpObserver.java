@@ -5,15 +5,15 @@ import android.content.Context;
 
 import com.chenenyu.router.Router;
 import com.orhanobut.logger.Logger;
+
+import java.lang.ref.WeakReference;
+
 import cn.skyui.library.http.exception.ApiException;
 import cn.skyui.library.utils.ActivityUtils;
 import cn.skyui.library.utils.StringUtils;
 import cn.skyui.library.utils.ToastUtils;
 import cn.skyui.library.utils.Utils;
 import cn.skyui.library.widget.progress.ProgressDialog;
-
-import java.lang.ref.WeakReference;
-
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 

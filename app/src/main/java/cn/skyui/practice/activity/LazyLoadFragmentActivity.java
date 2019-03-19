@@ -6,12 +6,13 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.orhanobut.logger.Logger;
-import cn.skyui.R;
-import cn.skyui.library.base.activity.BaseSwipeBackActivity;
-import cn.skyui.practice.widgets.PagerSlidingTabStrip;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.skyui.R;
+import cn.skyui.library.base.activity.BaseSwipeBackActivity;
+import cn.skyui.practice.widgets.PagerSlidingTabStrip;
 
 public class LazyLoadFragmentActivity extends BaseSwipeBackActivity {
 
@@ -26,6 +27,10 @@ public class LazyLoadFragmentActivity extends BaseSwipeBackActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lazy_load_fragment);
+
+        if(getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        }
 
         tabs = findViewById(R.id.tabs);
         pager = findViewById(R.id.pager);

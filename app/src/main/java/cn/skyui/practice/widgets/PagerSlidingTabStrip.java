@@ -37,9 +37,9 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import cn.skyui.R;
-
 import java.util.Locale;
+
+import cn.skyui.R;
 
 /**
  * pstsIndicatorColor      指示器颜色

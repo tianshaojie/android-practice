@@ -6,7 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-
     <include layout="@layout/toolbar" />
 
     <cn.skyui.practice.widgets.PagerSlidingTabStrip
@@ -15,9 +14,8 @@
         android:layout_height="34dp"
         android:background="@color/colorPrimary"
         app:pstsTabPaddingLeftRight="0dp"
-        app:pstsDividerColor="#465159"
-        app:pstsDividerPadding="10dp"
-        app:pstsDividerWidth="0.5dp"
+        app:pstsDividerPadding="0dp"
+        app:pstsDividerWidth="0dp"
         app:pstsIndicatorColor="@color/colorAccent"
         app:pstsIndicatorHeight="2dp"
         app:pstsIndicatorInFollower="true"

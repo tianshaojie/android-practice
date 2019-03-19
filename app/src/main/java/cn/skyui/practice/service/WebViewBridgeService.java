@@ -2,14 +2,10 @@ package cn.skyui.practice.service;
 
 import android.app.Service;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.IBinder;
-import android.os.RemoteException;
 import android.support.annotation.Nullable;
 
 import cn.skyui.aidl.IAppInterface;
-import cn.skyui.library.data.model.User;
-import cn.skyui.library.utils.ToastUtils;
 
 /**
  * Created by tiansj on 2018/4/17.

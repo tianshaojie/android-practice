@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.orhanobut.logger.Logger;
+
 import cn.skyui.R;
 import cn.skyui.library.base.fragment.BaseFragment;
 

@@ -5,13 +5,13 @@ import android.text.TextUtils;
 
 import com.orhanobut.logger.Logger;
 
-import cn.skyui.BuildConfig;
-import cn.skyui.R;
-import cn.skyui.library.LibraryInitManager;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+
+import cn.skyui.BuildConfig;
+import cn.skyui.R;
+import cn.skyui.library.LibraryInitManager;
 
 /**
  * Created by tiansj on 2018/4/17.

@@ -11,22 +11,35 @@ android {
         versionCode project.VERSION_CODE as int
         versionName project.VERSION_NAME
 
-        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        buildConfigField 'boolean', 'isDebug', 'true'
+        vectorDrawables.useSupportLibrary = true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["moduleName": project.name]
+            }
+        }
     }
 
     buildTypes {
+        debug {
+            buildConfigField 'boolean', 'isDebug', 'true'
+            minifyEnabled false
+            debuggable true
+        }
         release {
+            buildConfigField 'boolean', 'isDebug', 'false'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     dataBinding {
         enabled true
     }
@@ -42,5 +55,5 @@ dependencies {
     implementation project(':library:library')
     implementation project(':library-web:library')
 
-    annotationProcessor 'com.chenenyu.router:compiler:1.3.3'
+    annotationProcessor 'com.chenenyu.router:compiler:1.5.1'
 }
