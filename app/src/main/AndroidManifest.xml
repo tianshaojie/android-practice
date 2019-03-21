@@ -3,8 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="cn.skyui">
 
-    <uses-permission android:name="cn.skyui.aidl.permission.SERVICE_PERMISSION" />
-
     <application
         android:name="cn.skyui.practice.App"
         android:allowBackup="true"
@@ -34,15 +32,13 @@
             android:screenOrientation="portrait"
             android:label="Fragment 懒加载"/>
 
-        <service
-            android:name="cn.skyui.library.web.service.WebViewPreLoadService"
-            android:exported="true"
-            android:permission="cn.skyui.aidl.permission.SERVICE_PERMISSION">
-            <intent-filter>
-                <action android:name="cn.skyui.library.web.IWebAidlInterface" />
-            </intent-filter>
-        </service>
-
+        <!--<service-->
+            <!--android:name="cn.skyui.library.web.service.WebViewPreLoadService"-->
+            <!--android:exported="true">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="cn.skyui.library.web.IWebAidlInterface" />-->
+            <!--</intent-filter>-->
+        <!--</service>-->
 
     </application>
 
