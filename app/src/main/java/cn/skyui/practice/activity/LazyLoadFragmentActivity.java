@@ -20,8 +20,7 @@ public class LazyLoadFragmentActivity extends BaseSwipeBackActivity {
     private ViewPager pager;
     private MyStockPagerAdapter adapter;
 
-    private int prevFragment = 0;
-    private int currFragment = 0;
+    private int fragmentIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +47,12 @@ public class LazyLoadFragmentActivity extends BaseSwipeBackActivity {
             @Override
             public void onPageSelected(int position) {
                 Logger.i("position = %s", position);
-                MyStockFragment myStockFragment = adapter.getItem(prevFragment);
+                MyStockFragment myStockFragment = adapter.getItem(fragmentIndex);
                 if(myStockFragment != null) {
                     myStockFragment.hide();
                 }
                 adapter.getItem(position).show();
-
-                prevFragment = currFragment;
-                currFragment = position;
+                fragmentIndex = position;
             }
 
             @Override
@@ -89,7 +86,7 @@ public class LazyLoadFragmentActivity extends BaseSwipeBackActivity {
 
         @Override
         public MyStockFragment getItem(int position) {
-            Logger.i("getItem position = %d", position);
+//            Logger.i("getItem position = %d", position);
             if(fragments.size() > position && fragments.get(position) != null) {
                 return fragments.get(position);
             } else {
