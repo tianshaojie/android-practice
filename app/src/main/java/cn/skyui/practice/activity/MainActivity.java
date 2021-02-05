@@ -9,14 +9,21 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.chenenyu.router.annotation.Route;
 import com.gyf.barlibrary.ImmersionBar;
 import com.gyf.barlibrary.OSUtils;
+import com.netease.LDNetDiagnoService.LDNetDiagnoListener;
+import com.netease.LDNetDiagnoService.LDNetDiagnoService;
 
 import java.lang.reflect.Method;
 
@@ -24,6 +31,7 @@ import cn.skyui.R;
 import cn.skyui.library.base.activity.BaseActivity;
 import cn.skyui.library.utils.BarUtils;
 import cn.skyui.library.utils.ScreenUtils;
+import cn.skyui.library.utils.StringUtils;
 import cn.skyui.library.utils.ToastUtils;
 import cn.skyui.library.web.activity.WebViewActivity;
 
@@ -31,6 +39,16 @@ import static com.gyf.barlibrary.ImmersionBar.getStatusBarHeight;
 
 @Route("main")
 public class MainActivity extends BaseActivity {
+
+    private Button btn;
+    private EditText editText;
+    private TextView text;
+    private ProgressBar progress;
+
+    private String showInfo = "";
+    private boolean isRunning = false;
+    private LDNetDiagnoService _netDiagnoService;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +63,7 @@ public class MainActivity extends BaseActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
+
         findViewById(R.id.btn_browser).setOnClickListener(v -> {
             String url = "http://skyui.cn/interest/js.html";
             Intent intent = new Intent(this, WebViewActivity.class);
@@ -63,6 +82,58 @@ public class MainActivity extends BaseActivity {
 //                getNavBarHeight(MainActivity.this);
 //            }
 //        });
+
+        btn = findViewById(R.id.btn_net_checker);
+        editText = findViewById(R.id.text_domain);
+        text = findViewById(R.id.text_info);
+        text.setMovementMethod(new ScrollingMovementMethod());
+        progress = findViewById(R.id.progressBar);
+
+        btn.setOnClickListener(view -> {
+            String domainName = editText.getText().toString();
+            if(StringUtils.isEmpty(domainName)) {
+                ToastUtils.showShort("请求输入域名");
+                return;
+            }
+            if (!isRunning) {
+                showInfo = "";
+                _netDiagnoService = new LDNetDiagnoService(getApplicationContext(),
+                        "testDemo", "网络诊断应用", "1.0.0", "huipang@corp.netease.com",
+                        "deviceID(option)", domainName, "carriname", "ISOCountyCode",
+                        "MobilCountryCode", "MobileNetCode", new LDNetDiagnoListener() {
+                    @Override
+                    public void OnNetDiagnoFinished(String log) {
+                        text.setText(log);
+                        progress.setVisibility(View.GONE);
+                        btn.setText("开始诊断");
+                        btn.setEnabled(true);
+                        isRunning = false;
+                    }
+
+                    @Override
+                    public void OnNetDiagnoUpdated(String log) {
+                        showInfo += log;
+                        text.setText(showInfo);
+                    }
+                });
+                // 设置是否使用JNIC 完成traceroute
+                _netDiagnoService.setIfUseJNICTrace(true);
+//        _netDiagnoService.setIfUseJNICConn(true);
+                _netDiagnoService.execute();
+                progress.setVisibility(View.VISIBLE);
+                text.setText("Traceroute with max 30 hops...");
+                btn.setText("停止诊断");
+                btn.setEnabled(false);
+            } else {
+                progress.setVisibility(View.GONE);
+                btn.setText("开始诊断");
+                _netDiagnoService.cancel(true);
+                _netDiagnoService = null;
+                btn.setEnabled(true);
+            }
+
+            isRunning = !isRunning;
+        });
 
         addLayoutListener(this);
     }

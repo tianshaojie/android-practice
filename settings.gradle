@@ -1,3 +1,4 @@
+include ':library-net'
 include ':app'
 include ':library:library'
 include ':library-web:library'

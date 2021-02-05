@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="cn.skyui">
 
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name="cn.skyui.practice.App"
         android:allowBackup="true"

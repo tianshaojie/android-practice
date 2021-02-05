@@ -54,6 +54,7 @@ dependencies {
 
     implementation project(':library:library')
     implementation project(':library-web:library')
+    implementation project(':library-net')
 
     annotationProcessor 'com.chenenyu.router:compiler:1.5.1'
 }

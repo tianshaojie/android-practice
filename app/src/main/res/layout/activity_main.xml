@@ -7,31 +7,63 @@
 
     <include layout="@layout/toolbar" />
 
-    <ScrollView
+    <!--    <ScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_below="@+id/toolbar">-->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/toolbar"
+        android:layout_marginBottom="@dimen/space_10"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <Button
+            android:id="@+id/btn_browser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/space_10"
-            android:orientation="vertical">
+            android:text="WebView 独立进程"
+            android:textAllCaps="false" />
 
-            <Button
-                android:id="@+id/btn_browser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="WebView 独立进程"
-                android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ViewPager + Fragment 懒加载"
+            android:textAllCaps="false" />
 
-            <Button
-                android:id="@+id/btn_viewpager"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ViewPager + Fragment 懒加载"
-                android:textAllCaps="false" />
+        <EditText
+            android:id="@+id/text_domain"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_50"
+            android:hint="输入诊断域名"
+            android:text="www.qq.com"
+            android:textSize="@dimen/text_size_14" />
 
-        </LinearLayout>
-    </ScrollView>
+        <Button
+            android:id="@+id/btn_net_checker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="网络诊断"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/text_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/space_30"
+        android:layout_height="@dimen/space_30"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/space_10"
+        android:visibility="gone" />
+
+    <!--    </ScrollView>-->
 </RelativeLayout>
