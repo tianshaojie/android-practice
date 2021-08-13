@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.graphics.Rect;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
+import android.support.annotation.RequiresApi;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +32,7 @@ import java.lang.reflect.Method;
 import cn.skyui.R;
 import cn.skyui.library.base.activity.BaseActivity;
 import cn.skyui.library.utils.BarUtils;
+import cn.skyui.library.utils.NetworkUtils;
 import cn.skyui.library.utils.ScreenUtils;
 import cn.skyui.library.utils.StringUtils;
 import cn.skyui.library.utils.ToastUtils;
@@ -82,6 +85,10 @@ public class MainActivity extends BaseActivity {
 //                getNavBarHeight(MainActivity.this);
 //            }
 //        });
+
+
+        TextView textViewIp = findViewById(R.id.text_ip);
+        textViewIp.setText("本机IP：" + NetworkUtils.getIPAddress(true) + " / " + NetworkUtils.getIPAddress(false));
 
         btn = findViewById(R.id.btn_net_checker);
         editText = findViewById(R.id.text_domain);
@@ -159,6 +166,7 @@ public class MainActivity extends BaseActivity {
     /**
      * 获取是否存在NavigationBar，是否有虚拟按钮
      */
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public static boolean checkHasNavigationBar(Context context) {
         // 小米系统判断虚拟键是否显示方法
         if (OSUtils.isMIUI()) {
